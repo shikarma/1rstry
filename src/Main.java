@@ -1,14 +1,21 @@
+import javax.swing.JFrame;
+
 
 public class Main {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("Hello world !");
-		Personnage paul = new Personnage("Paul",100);
-		Personnage pierre = new Personnage("Pierre",100);
+	public static void main(String[] args) 
+	{
+		Ecran ecran = new Ecran();
 		
-		paul.attaquer(pierre);
-		System.out.println(pierre.pv);
+		GameEngine engine = new GameEngine(ecran);
+		
+		JFrame  frame = new JFrame();
+		frame.setContentPane(ecran);
+		frame.setVisible(true);
+		frame.setSize(400,400);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		engine.start();
 	}
 
 }
