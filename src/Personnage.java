@@ -8,6 +8,8 @@ public class Personnage {
 	
 	double x;
 	double y;
+	int width;
+	int height;
 	
 	double vx;
 	double vy;
@@ -63,6 +65,12 @@ public class Personnage {
 	
 	public void dessiner(Graphics g)
 	{
-		g.fillRect((int)x,(int)y,10,10);
+		g.fillRect((int)x,(int)y,width,height);
+	}
+	
+	public boolean estCollision(Personnage p)
+	{
+		//TODO
+		return false;
 	}
 }
